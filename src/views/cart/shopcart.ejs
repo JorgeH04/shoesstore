@@ -1,0 +1,114 @@
+<% include ../partials/_header %>
+
+<section class="totals py-5">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col text-center text-uppercase">
+              <div class="row">
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-2">
+                  <p class="text-uppercase">products</p>
+                </div>
+                <!-- end of  single column -->
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-4">
+                  <p class="text-uppercase">name of products</p>
+                </div>
+                <!-- end of  single column -->
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-2">
+                  <p class="text-uppercase">price</p>
+                </div>
+                <!-- end of  single column -->
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-2">
+                  <p class="text-uppercase">quantity</p>
+                </div>
+                <!-- end of  single column -->
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-2">
+                  <p class="text-uppercase">eliminar</p>
+                </div>
+                <!-- end of  single column -->
+              </div>
+              <!-- end of column -->
+              <hr />
+    
+    
+              <% if(products) { %>
+                <% for(var i = 0; i < products.length; i++) { %>
+              <!-- single product -->
+              <div class="row my-3 align-items-center">
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-2">
+                  <img
+                    src="<%= products[i].item.image %>"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <!-- end of single column -->
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-4">
+                  <p> <%= products[i].item.title %> </p>
+                </div>
+                <!-- end of single column -->
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-2"><p>$<%= products[i].price %></p></div>
+                <!-- end of single column -->
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-2">
+                  <!-- cart buttons -->
+                  <div class="d-flex justify-content-center align-items-center">
+                    <a href="/reduce/<%= products[i].item._id %>" class="btn btn-black mx-1">-</a>
+                    <span class="btn btn-black mx-1"> <%= products[i].qty %> </span>
+                    <a href="/sumar/<%= products[i].item._id %>" class="btn btn-black mx-1">+</a>
+                  </div>
+                  <!-- end cart buttons -->
+                </div>
+                <!-- end of single column -->
+                <!-- single column -->
+                <div class="col-10 mx-auto col-md-2">
+                        <a href="/remove/<%= products[i].item._id %>" class="btn btn-danger">Eliminar</a>
+
+                </div>
+
+                <!-- end of single column -->
+              </div>
+              <!-- end of single product -->
+              <% } %>            
+    
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="3" class="text-right">Total</th>
+                <th><%= totalPrice %></th>
+                <th></th>
+            </tr>
+            </tfoot>
+        </table>
+    
+    </div>
+    <div class="col-12 text-right">
+        <button class="btn btn-outline-secondary mr-3" type="submit">Update</button>
+        <a href="#" class="btn btn-outline-success">Checkout</a>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    
+
+    <% } else { %>                    
+    
+   
+    
+    <% } %>
+    
+    
+    
+
+
+
+
+<% include ../partials/_footer %>      

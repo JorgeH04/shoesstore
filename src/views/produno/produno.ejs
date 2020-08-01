@@ -1,0 +1,365 @@
+<% include ../partials/_header %>
+
+
+    <!-- Main Content Wrapper Start -->
+    <div class="main-content-wrapper">
+      <div class="shop-page-wrapper shop-fullwidth ptb--80">
+          <div class="container">
+              <div class="row mb--50">
+                  <div class="col-12">
+                      <div class="shop-toolbar">
+                          <div class="row align-items-center">
+                              <div class="col-md-5 mb-sm--30 mb-xs--10">
+                                  <div class="shop-toolbar__left">
+                                      <div class="product-ordering">
+                                          <select class="product-ordering__select nice-select">
+                                              <option value="0">Default Sorting</option>
+                                              <option value="1">Relevance</option>
+                                              <option value="2">Name, A to Z</option>
+                                              <option value="3">Name, Z to A</option>
+                                              <option value="4">Price, low to high</option>
+                                              <option value="5">Price, high to low</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-7">
+                                  <div
+                                      class="shop-toolbar__right d-flex justify-content-md-end justify-content-start flex-sm-row flex-column">
+                                      <p class="product-pages">Showing Result 08 Among 72</p>
+                                      <div class="product-view-mode ml--50 ml-xs--0">
+                                          <a class="active" href="#" data-target="grid">
+                                              <img src="assets/img/icons/grid.png" alt="Grid">
+                                          </a>
+                                          <a href="#" data-target="list">
+                                              <img src="assets/img/icons/list.png" alt="Grid">
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="container shop-products list">
+              <div class="row">
+                  <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
+                      <div class="ft-product-list">
+                          <% produno.forEach(function (produn) { %>
+
+                          <div class="product-inner">
+                              <figure class="product-image">
+
+                                  <img src="<%= produn.image %> " alt="Products">
+
+                                  <div class="product-thumbnail-action">
+                                      <a data-toggle="modal" data-target="#productModal"
+                                          class="action-btn quick-view">
+                                          <i class="la la-eye"></i>
+                                      </a>
+                                  </div>
+                              </figure>
+                              <div class="product-info">
+                                  <h3 class="product-title mb--25">
+                                      $<%= produn.title %> 
+
+                                  </h3>
+                                  <div class="ft-product-action-list mb--20">
+                                      <div class="product-size mb--25">
+                                          <div class="product-size-swatch">
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  XL
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  L
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  M
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  S
+                                              </span>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                                  <div class="product-price-wrapper mb--15 mb-sm--10">
+                                      <span class="money">Rp. <%= produn.price %> </span>
+                                  </div>
+                                  <p class="product-short-description mb--20">
+                                      Pick up your multisport training regimen in these durable shoes. They have a
+                                      breathable mesh upper with a midfoot cage for reliable support. The pillow-like
+                                      midsole cushions your stride, kilometre after kilometre.
+                                      <div class="ft-product-action-list d-flex align-items-center">
+                                          <a href="/produnoredirect/<%= produn.id %>" class="btn btn-size-md" id="addtocartdan">Add To Cart</a>
+
+                                      </div>
+                              </div>
+                          </div>
+                          <% }) %>
+
+                      </div>
+
+                  </div>
+
+
+                  <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
+                      <div class="ft-product-list">
+                          <div class="product-inner">
+                              <figure class="product-image">
+
+                                  <img src="assets/img/products/men/2.png" alt="Products">
+
+                                  <div class="product-thumbnail-action">
+                                      <a data-toggle="modal" data-target="#productModal2"
+                                          class="action-btn quick-view">
+                                          <i class="la la-eye"></i>
+                                      </a>
+                                  </div>
+                              </figure>
+                              <div class="product-info">
+                                  <h3 class="product-title mb--25">
+                                      Dame 6 Geek Up Shoes
+                                  </h3>
+                                  <div class="ft-product-action-list mb--20">
+                                      <div class="product-size mb--25">
+                                          <div class="product-size-swatch">
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  XL
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  L
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  M
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  S
+                                              </span>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                                  <div class="product-price-wrapper mb--15 mb-sm--10">
+                                      <span class="money">Rp. 900.000</span>
+
+                                  </div>
+                                  <p class="product-short-description mb--20">
+                                      Always on point, this slip-on Dame 6 Geek Up Shoes is back like never before.
+                                      Follow
+                                      in the footsteps of '80s hip hop royalty
+                                      and do the New York b-boy look entirely your way. However that plays out – chic
+                                      blazer suits, scruffy jeans and tee – you'll make it look easy in this cool,
+                                      casual remake. Ahead of the 2020 All-Star Weekend, we've rebuilt the shoe with a
+                                      fat tongue for extra slam dunk. Step into the future of no fuss comfort without
+                                      sacrificing on old-school class.
+                                  </p>
+                                  <div class="ft-product-action-list d-flex align-items-center">
+                                      <a href="#" class="btn btn-size-md" id="addtocartdan">Add To Cart</a>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
+                      <div class="ft-product-list">
+                          <div class="product-inner">
+                              <figure class="product-image">
+
+                                  <img src="assets/img/products/men/3.png" alt="Products">
+
+                                  <div class="product-thumbnail-action">
+                                      <a data-toggle="modal" data-target="#productModal3"
+                                          class="action-btn quick-view">
+                                          <i class="la la-eye"></i>
+                                      </a>
+                                  </div>
+                              </figure>
+                              <div class="product-info">
+                                  <h3 class="product-title mb--25">
+                                      Ultraboost Shoes
+                                  </h3>
+                                  <div class="ft-product-action-list mb--20">
+                                      <div class="product-size mb--25">
+                                          <div class="product-size-swatch">
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  XL
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  L
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  M
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  S
+                                              </span>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                                  <div class="product-price-wrapper mb--15 mb-sm--10">
+                                      <span class="money">Rp 1.200.000</span>
+
+                                  </div>
+                                  <p class="product-short-description mb--20">
+                                      Always one step ahead of the curve. Since the release of the Ultraboost in 2015,
+                                      the world of running shoes has never been the same. These adidas shoes refine
+                                      the legendary fit and feel of Ultraboost. The foot-hugging knit upper has
+                                      stitched-in reinforcement for a locked-in fit. Responsive cushioning adds energy
+                                      to your stride for that I-could-run-forever feeling.
+                                  </p>
+                                  <div class="ft-product-action-list d-flex align-items-center">
+                                      <a href="#" class="btn btn-size-md" id="addtocartdan">Add To Cart</a>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
+                      <div class="ft-product-list">
+                          <div class="product-inner">
+                              <figure class="product-image">
+
+                                  <img src="assets/img/products/men/4.png" alt="Products">
+
+                                  <div class="product-thumbnail-action">
+                                      <a data-toggle="modal" data-target="#productModal4"
+                                          class="action-btn quick-view">
+                                          <i class="la la-eye"></i>
+                                      </a>
+                                  </div>
+                              </figure>
+                              <div class="product-info">
+                                  <h3 class="product-title mb--25">
+                                      Ginko Shoes
+                                  </h3>
+                                  <div class="ft-product-action-list mb--20">
+                                      <div class="product-size mb--25">
+                                          <div class="product-size-swatch">
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  XL
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  L
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  M
+                                              </span>
+                                              <span class="product-size-swatch-btn variation-btn">
+                                                  S
+                                              </span>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                                  <div class="product-price-wrapper mb--15 mb-sm--10">
+                                      <span class="money">Rp. 800.000</span>
+
+                                  </div>
+                                  <p class="product-short-description mb--20">
+                                      When your running shoes are comfortable, you don't think about your feet. You
+                                      think about going a little farther. Or a little faster. You're free to push
+                                      yourself in these adidas running shoes. The mesh upper is breathable and
+                                      supportive. Cushioning in the midsole is light enough for explosive speed and
+                                      responsive enough for total comfort. 3-Stripes inspired by Japanese calligraphy
+                                      make them look extra speedy.
+                                  </p>
+                                  <div class="ft-product-action-list d-flex align-items-center">
+                                      <a href="#" class="btn btn-size-md" id="addtocartdan">Add To Cart</a>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-12">
+                      <nav class="pagination-wrap mt--35 mt-md--25">
+                          <ul class="pagination">
+                              <li><span class="page-number current">1</span></li>
+                              <li><a href="#" class="page-number">2</a></li>
+                              <li><span class="dot"></span></li>
+                              <li><span class="dot"></span></li>
+                              <li><span class="dot"></span></li>
+                              <li><a href="#" class="page-number">16</a></li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Main Content Wrapper Start -->
+
+
+
+ 
+
+    <!-- OffCanvas Menu Start -->
+    <div class="offcanvas-menu-wrapper" id="offcanvasMenu">
+        <div class="offcanvas-menu-inner">
+            <a href="" class="btn-close">
+                <i class="la la-remove"></i>
+            </a>
+            <nav class="offcanvas-navigation">
+                <ul class="offcanvas-menu">
+                    <li>
+                        <a href="index.html" class="mainmenu__link">
+                            <span class="mm-text">Home</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="shop.html" class="mainmenu__link">
+                            <span class="mm-text">Shop</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="contactus.html" class="mainmenu__link">
+                            <span class="mm-text">Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html" class="mainmenu__link">
+                            <span class="mm-text">Login</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="mainmenu__link">
+                            <span class="mm-text">Register</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- OffCanvas Menu End -->
+
+
+
+    <!-- Global Overlay Start -->
+    <div class="global-overlay"></div>
+    <!-- Global Overlay End -->
+
+    <!-- Global Overlay Start -->
+    <a class="scroll-to-top" href=""><i class="la la-angle-double-up"></i></a>
+    <!-- Global Overlay End -->
+    </div>
+    <!-- Main Wrapper End -->
+
+
+    <!-- ************************* JS Files ************************* -->
+
+
+
+
+
+
+
+  <% include ../partials/_footer %>

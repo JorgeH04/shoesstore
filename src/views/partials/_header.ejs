@@ -1,0 +1,148 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>DALAN - Shoes eCommerce</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/assets/img/icon.png">
+
+    <!-- ************************* CSS Files ************************* -->
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="/assets/css/vendor.css">
+
+
+    <!-- style css -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/dani.css">
+</head>
+
+<body>
+
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+        <!-- Header Start -->
+
+        <header class="header">
+            <div class="header__inner fixed-header">
+                <div class="header__main">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="header__main-inner">
+                                    <div class="header__main-left">
+                                        <div class="logo">
+                                            <a href="/" class="logo--normal">
+                                                <img src="/assets/img/logo/logo.png" alt="Logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="header__main-center">
+                                        <nav class="main-navigation text-center d-none d-lg-block">
+                                            <ul class="mainmenu">
+                                                <li class="mainmenu__item">
+                                                    <a href="/" class="mainmenu__link">
+                                                        <span class="mm-text">Home</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/produnoindex/1" class="mainmenu__link">
+                                                        <span class="mm-text">Shop</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <% if(user) { %>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/produnoindex/1" class="mainmenu__link">
+                                                        <span class="mm-text">Shop</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="contactus.html" class="mainmenu__link">
+                                                        <span class="mm-text">Contact Us</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/perfil/1" class="mainmenu__link">
+                                                        <span class="mm-text">Perfil</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/logout" class="mainmenu__link">
+                                                        <span class="mm-text">Logout</span>
+                                                    </a>
+                                                </li>
+
+                                                <% } else { %>    
+                                                    
+                                             
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/signin" class="mainmenu__link">
+                                                        <span class="mm-text">Login</span>
+                                                    </a>
+                                                </li>
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/signup" class="mainmenu__link">
+                                                        <span class="mm-text">Registrarse</span>
+                                                    </a>
+                                                </li>
+                                                <% } %>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="header__main-right">
+                                        <div class="header-toolbar-wrap">
+                                            <div class="header-toolbar">
+                                                <div class="header-toolbar__item header-toolbar--minicart-dani">
+                                                    <a href="/shopcart/" class="header-toolbar__btn toolbar-btndani">
+                                                        <i class="la la-shopping-cart"></i>
+                                                        <% if(session.cart) { %>
+                                                        <span id="logocartnambah"><%= session.cart.totalQty%></span>
+                                                        <% } %>
+
+
+                                                    </a>
+                                                </div>
+                                                <div class="header-toolbar__item d-block d-lg-none">
+                                                    <a href="#offcanvasMenu"
+                                                        class="header-toolbar__btn toolbar-btn menu-btn">
+                                                        <div class="hamburger-icon">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Header End -->
+
+        

@@ -1,0 +1,110 @@
+<% include ../partials/_header %>
+
+
+
+<div class="col-md-4 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>Agregue un nuevo producto</h3>
+    </div>
+    <div class="card-body">
+      <form action="/prodcuatro/new-prodcuatro" method="POST">
+        <div class="form-group">
+          <input type="text" name="imagePath" class="form-control" placeholder="image" autofocus/>
+        </div>
+       <div class="form-group">
+          <input type="text" name="product" class="form-control" placeholder="product" autofocus/>
+        </div>
+        <div class="form-group">
+            <input type="text" name="talle" class="form-control" placeholder="talle" autofocus/>
+          </div>
+                 <div class="form-group">
+            <input type="text" name="color" class="form-control" placeholder="color" autofocus/>
+          </div>
+                 <div class="form-group">
+            <input type="text" name="tallestock" class="form-control" placeholder="tallestock" autofocus/>
+          </div>
+                 <div class="form-group">
+            <input type="text" name="colorstock" class="form-control" placeholder="colorstock" autofocus/>
+          </div>
+        <div class="form-group">
+          <input type="number" name="price" class="form-control" placeholder="price" autofocus/>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  
+<div class="col-12">
+  <!-- Main Content -->
+  <main class="row">
+
+      <!-- Category Products -->
+      <div class="col-12">
+          <div class="row">
+              <div class="col-12 py-3">
+                  <div class="row">
+                      <div class="col-12 text-center text-uppercase">
+                          <h2>Computers</h2>
+                      </div>
+
+                      <form action="/searchback" method="GET">
+                        <div class="form-group" >
+                            <div class="input-group">
+                                <input type="text"  name="search" class="form-control border-dark" placeholder="Buscar productos" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-dark"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+                  <div class="row">
+                        <% prodcuatro.forEach(function (prodcuatr) { %>
+
+                      <!-- Product -->
+                      <div class="col-xl-2 col-lg-3 col-sm-6 my-3">
+                          <div class="col-12 bg-white text-center h-100 product-item">
+                              <div class="row h-100">
+                                  <div class="col-12 p-0 mb-3">
+                                      <a href="/prodcuatroredirect/<%= proddo.id %>">
+                                          <img src="<%= prodcuatr.image %>" class="img-fluid">
+                                      </a>
+                                  </div>
+                                  <div class="col-12 mb-3">
+                                        <%= prodcuatr.title %> 
+                                  </div>
+                                  <div class="col-12 mb-3">
+                                          <span class="product-price-old">
+                                              $<%= prodcuatr.price %> 
+                                          </span>
+                                      
+                                  </div>
+                                  <a class="btn btn-danger" href="/prodcuatro/delete/<%= prodcuatr.id %>">
+                                    Eliminar
+                                  </a>
+                                  <a class="btn btn-primary" href="/prodcuatro/edit/<%= prodcuatr.id %>">
+                                    Editar
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Product -->
+                      <% }) %>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Category Products -->
+
+
+
+        <% include ../partials/_footer %>

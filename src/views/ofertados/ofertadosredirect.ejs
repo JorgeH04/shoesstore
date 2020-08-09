@@ -1,4 +1,142 @@
-<% include ../partials/_header %>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DALAN - Shoes eCommerce</title>
+
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/assets/img/icon.png">
+
+    <link href="//fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/csssss/main.css">
+
+
+    <link rel="stylesheet" href="/csss/bootstrap.min.css">
+    <link rel="stylesheet" href="/csss/all.min.css">
+    <link rel="stylesheet" href="/csss/main.css">
+    <link rel="stylesheet" href="/csss/style.css">
+
+
+
+</head>
+<body>
+
+
+<!-- Main Wrapper Start -->
+<div class="wrapper">
+        <!-- Header Start -->
+
+        <header class="header">
+            <div class="header__inner fixed-header">
+                <div class="header__main">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="header__main-inner">
+                                    <div class="header__main-left">
+                                        <div class="logo">
+                                            <a href="/" class="logo--normal">
+                                                <img src="/assets/img/logo/logo.png" alt="Logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="header__main-center">
+                                        <nav class="main-navigation text-center d-none d-lg-block">
+                                            <ul class="mainmenu">
+                                                <li class="mainmenu__item">
+                                                    <a href="/" class="mainmenu__link">
+                                                        <span class="mm-text">Home</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/produnoindex/1" class="mainmenu__link">
+                                                        <span class="mm-text">Shop</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <% if(user) { %>
+
+                  
+
+                                                
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/perfil/1" class="mainmenu__link">
+                                                        <span class="mm-text">Perfil</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/logout" class="mainmenu__link">
+                                                        <span class="mm-text">Logout</span>
+                                                    </a>
+                                                </li>
+
+                                                <% } else { %>    
+                                                    
+                                             
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/signin" class="mainmenu__link">
+                                                        <span class="mm-text">Login</span>
+                                                    </a>
+                                                </li>
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/signup" class="mainmenu__link">
+                                                        <span class="mm-text">Registrarse</span>
+                                                    </a>
+                                                </li>
+                                                <% } %>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="header__main-right">
+                                        <div class="header-toolbar-wrap">
+                                            <div class="header-toolbar">
+                                                <div class="header-toolbar__item header-toolbar--minicart-dani">
+                                                    <a href="/shopcart/" class="header-toolbar__btn toolbar-btndani">
+                                                        <i class="la la-shopping-cart"></i>
+                                                        <% if(session.cart) { %>
+                                                        <span id="logocartnambah"><%= session.cart.totalQty%></span>
+                                                        <% } %>
+
+
+                                                    </a>
+                                                </div>
+                                                <div class="header-toolbar__item d-block d-lg-none">
+                                                    <a href="#offcanvasMenu"
+                                                        class="header-toolbar__btn toolbar-btn menu-btn">
+                                                        <div class="hamburger-icon">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
 
 
 
@@ -25,7 +163,7 @@
                                     <div class="img-small border" style="background-image: url('<%= ofertados.imagetres %>')" data-src="<%= ofertados.imagetres %>"></div>
                                 </div>
                                 <div class="col-sm-2 col-3">
-                                    <div class="img-small border" style="background-image: url('images/image-4.jpg')" data-src="images/image-4.jpg"></div>
+                                    <div class="img-small border" style="background-image: url('<%= ofertados.imagetres %>')" data-src="<%= ofertados.imagetres %>"></div>
                                 </div>
                             </div>
                         </div>
@@ -35,23 +173,24 @@
                     <!-- Product Info -->
                     <div class="col-lg-5 col-md-9">
                         <div class="col-12 product-name large">
-                            Area 51M Gaming Laptop Welcome to A New ERA with 9TH GEN Intel CORE I9-9900K NVIDIA GEFORCE RTX 2080 8GB GDDR6 17.3" FHD 144HZ AG G-SYNC TOBII EYETRACKING (1TB SSD RAID|32GB RAM|10 PRO)
-                            <small>By <a href="#">Dell</a></small>
+                                <%= ofertados.title %>
+                            <small> <a href="#"></a></small>
                         </div>
                         <div class="col-12 px-0">
                             <hr>
                         </div>
                         <div class="col-12">
                             <ul>
-                                <li>Processor 8th Generation Intel Core i9-8950HK (6-Core, 12MB Cache, Overclocking up to 5.0GHz)</li>
-                                <li>Memory 32GB DDR4-2666MHz, 2x16GB Ram Speed Gaming Performance</li>
-                                <li>Hard Drive 1TB SSD RAID 0 (2x 512GB PCIe NVME M.2 SSDs) + 1TB (+8GB SSHD) Hybrid Drive</li>
-                                <li>17.3" Full HD display 1920 x 1080 resolution boasts impressive color and clarity. IPS technology for wide viewing angles.</li>
-                                <li>Video Card NVIDIA® GeForce® RTX 2080 with 8GB GDDR6</li>
+                                <li><strong>Descripción:</strong> <%= ofertados.description %></li> <br> 
+                                <li><strong>Colores en Stock:</strong> <%= ofertados.colorstock %></li> <br>
+                                <li><strong>Talles en Stock:</strong> <%= ofertados.tallestock %></li>
                             </ul>
                         </div>
                     </div>
                     <!-- Product Info -->
+
+
+                
 
                     <!-- Sidebar -->
                     <div class="col-lg-2 col-md-3 text-center">
@@ -59,15 +198,26 @@
                             <div class="row">
                                 <div class="col-12">
                                 <span class="detail-price">
-                                        <h2>$<%= ofertados.price %></h2>
+                                    $2,500
                                 </span>
+                                    <span class="detail-price-old">
+                                    $2,800
+                                </span>
+                                </div>
+                                <div class="col-xl-5 col-md-9 col-sm-3 col-5 mx-auto mt-3">
+                                    <div class="form-group">
+                                        <label for="qty">Quantity</label>
+                                        <input type="number" id="qty" min="1" value="1" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                        <a href="/addtocardofertados/<%= ofertados.id %>" class="btn btn-success" role="button">Agregar al carro</a>                            </div>
 
                                 </div>
-                             
                                 <div class="col-12 mt-3">
-                                    <a href="/addtocardofertados/<%= ofertados.id %>" class="btn btn-outline-dark" role="button">Agregar al carro</a>
+                                        <a href="/ofertados/tallecolor/<%= ofertados.id %>"class="btn btn-success" role="button">Elija su talle y color</a>
+
                                 </div>
-                             
                             </div>
                         </div>
                     </div>
@@ -76,6 +226,9 @@
                 </div>
             </div>
 
+            
+
+                    
 
         </main>
         <!-- Main Content -->
@@ -84,5 +237,84 @@
 
 
 
-<% include ../partials/_footer %>
 
+
+
+
+    <!-- Footer Start-->
+<footer class="footer bg-color" data-bg-color="#f4f8fa">
+        <div class="footer-bottom">
+            <div class="container-fluid">
+                <div class="row border-top ptb--20">
+                    <div class="col-12 text-center">
+                        <p class="copyright-text">DALAN &copy; 2020 made with love ❤</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+    
+    
+    <div class="offcanvas-menu-wrapper" id="offcanvasMenu">
+        <div class="offcanvas-menu-inner">
+            <a href="" class="btn-close">
+                <i class="la la-remove"></i>
+            </a>
+            <nav class="offcanvas-navigation">
+                <ul class="offcanvas-menu">
+                    <li>
+                        <a href="index.html" class="mainmenu__link">
+                            <span class="mm-text">Home</span>
+                        </a>
+    
+                    </li>
+                    <li>
+                        <a href="shop.html" class="mainmenu__link">
+                            <span class="mm-text">Shop</span>
+                        </a>
+    
+                    </li>
+                    <li>
+                        <a href="contactus.html" class="mainmenu__link">
+                            <span class="mm-text">Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html" class="mainmenu__link">
+                            <span class="mm-text">Login</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="mainmenu__link">
+                            <span class="mm-text">Register</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Searchform Popup End -->
+    
+    <!-- Qicuk View Modal Start -->
+    
+    <!-- Qicuk View Modal End -->
+    
+    <!-- Global Overlay Start -->
+    <div class="global-overlay"></div>
+    <!-- Global Overlay End -->
+    
+    <!-- Global Overlay Start -->
+    <a class="scroll-to-top" href=""><i class="la la-angle-double-up"></i></a>
+    <!-- Global Overlay End -->
+    </div>
+    <!-- Main Wrapper End -->
+    
+
+
+
+    <script type="text/javascript" src="/jss/jquery.min.js"></script>
+    <script type="text/javascript" src="/jss/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/jss/script.js"></script>
+</body>
+</html>

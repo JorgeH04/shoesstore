@@ -1,49 +1,323 @@
-<% include ../partials/_header %>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KALVIN - Shoes </title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/assets/img/icon.png">
+
+    <link href="//fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/csssss/main.css">
+
+
+    <link rel="stylesheet" href="/csss/bootstrap.min.css">
+    <link rel="stylesheet" href="/csss/all.min.css">
+    <link rel="stylesheet" href="/csss/main.css">
+    <link rel="stylesheet" href="/csss/style.css">
 
 
 
-<div class="container mt-5 p-4">
-        <div class="row">
+</head>
+<body>
 
-           <div class= "col-md-6 mt-5">
-                <div class="card text-center mx-auto" >
-                     <div class="card-body">
-                          <img src="<%= prodtres.imagePath %>" class="img-fluid">
-                     </div>        
-                 </div>
+
+<!-- Main Wrapper Start -->
+<div class="wrapper">
+        <!-- Header Start -->
+
+        <header class="header">
+            <div class="header__inner fixed-header">
+                <div class="header__main">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="header__main-inner">
+                                    <div class="header__main-left">
+                                        <div class="logo">
+                                            <a href="/" class="logo--normal">
+                                                <img src="/assets/img/logo/logo.png" alt="Logo">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="header__main-center">
+                                        <nav class="main-navigation text-center d-none d-lg-block">
+                                            <ul class="mainmenu">
+                                                <li class="mainmenu__item">
+                                                    <a href="/" class="mainmenu__link">
+                                                        <span class="mm-text">Home</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/produnoindex/1" class="mainmenu__link">
+                                                        <span class="mm-text">Shop</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <% if(user) { %>
+
+                  
+
+                                                
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/perfil/1" class="mainmenu__link">
+                                                        <span class="mm-text">Perfil</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/logout" class="mainmenu__link">
+                                                        <span class="mm-text">Logout</span>
+                                                    </a>
+                                                </li>
+
+                                                <% } else { %>    
+                                                    
+                                             
+
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/signin" class="mainmenu__link">
+                                                        <span class="mm-text">Login</span>
+                                                    </a>
+                                                </li>
+                                                <li class="mainmenu__item">
+                                                    <a href="/users/signup" class="mainmenu__link">
+                                                        <span class="mm-text">Registrarse</span>
+                                                    </a>
+                                                </li>
+                                                <% } %>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="header__main-right">
+                                        <div class="header-toolbar-wrap">
+                                            <div class="header-toolbar">
+                                                <div class="header-toolbar__item header-toolbar--minicart-dani">
+                                                    <a href="/shopcart/" class="header-toolbar__btn toolbar-btndani">
+                                                        <i class="fas fa-cart-plus"></i>
+                                                        <% if(session.cart) { %>
+                                                        <span id="logocartnambah"><%= session.cart.totalQty%></span>
+                                                        <% } %>
+
+
+                                                    </a>
+                                                </div>
+                                                <div class="header-toolbar__item d-block d-lg-none">
+                                                    <a href="#offcanvasMenu"
+                                                        class="header-toolbar__btn toolbar-btn menu-btn">
+                                                        <div class="hamburger-icon">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class= "col-md-6 mt-5">
-     
-                <div class="card text-center mx-auto" >
-                     <div class="card-body">
-                         <h1>Talles y colores en stock:</h1>
-                           <h5><%= prodtres.tallestock %></h2>
-                           <h5><%= prodtres.colorstock %></h2>
-                           <br>
-                          <a href="/prodtres/tallecolor/<%= prodtres.id %>"class="btn btn-danger pull-right" role="button">Elija su talle y color</a>
-     
-                     </div>     
-                 </div>
-                <div class="card text-center mx-auto" >
-                     <div class="card-body">
-                         <h2><%= prodtres.product %></h2>
-                         <h2>$<%= prodtres.price %></h2>
-                     </div>  
+        </header>
 
-                     <div class="card-body">
-                          <a href="/addtocardprodtres/<%= prodtres.id %>" class="btn btn-success pull-right" role="button">Agregar al carro</a>
-                     </div>       
-                 </div>
+
+
+
+<div class="col-12">
+        <!-- Main Content -->
+        <main class="row">
+            <div class="col-12 bg-white py-3 my-3">
+                <div class="row">
+
+                    <!-- Product Images -->
+                    <div class="col-lg-5 col-md-12 mb-3">
+                        <div class="col-12 mb-3">
+                            <div class="img-large border" style="background-image: url('<%= prodtres.image %>')"></div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-sm-2 col-3">
+                                    <div class="img-small border" style="background-image: url('<%= prodtres.image %>')" data-src="<%= prodtres.image %>"></div>
+                                </div>
+                                <div class="col-sm-2 col-3">
+                                    <div class="img-small border" style="background-image: url('<%= prodtres.imagedos %>')" data-src="<%= prodtres.imagedos %>"></div>
+                                </div>
+                                <div class="col-sm-2 col-3">
+                                    <div class="img-small border" style="background-image: url('<%= prodtres.imagetres %>')" data-src="<%= prodtres.imagetres %>"></div>
+                                </div>
+                                <div class="col-sm-2 col-3">
+                                    <div class="img-small border" style="background-image: url('<%= prodtres.imagetres %>')" data-src="<%= prodtres.imagetres %>"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Images -->
+
+                    <!-- Product Info -->
+                    <div class="col-lg-5 col-md-9">
+                        <div class="col-12 product-name large">
+                                <%= prodtres.title %>
+                            <small> <a href="#"></a></small>
+                        </div>
+                        <div class="col-12 px-0">
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li><strong>Descripción:</strong> <%= prodtres.description %></li> <br> 
+                                <li><strong>Colores en Stock:</strong> <%= prodtres.colorstock %></li> <br>
+                                <li><strong>Talles en Stock:</strong> <%= prodtres.tallestock %></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product Info -->
+
+
+                
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-2 col-md-3 text-center">
+                        <div class="col-12 border-left border-top sidebar h-100">
+                            <div class="row">
+                                <div class="col-12">
+                                <span class="detail-price">
+                                    $2,500
+                                </span>
+                                    <span class="detail-price-old">
+                                    $2,800
+                                </span>
+                                </div>
+                                <div class="col-xl-5 col-md-9 col-sm-3 col-5 mx-auto mt-3">
+                                    <div class="form-group">
+                                        <label for="qty">Quantity</label>
+                                        <input type="number" id="qty" min="1" value="1" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                        <a href="/addtocardprodtres/<%= prodtres.id %>" class="btn btn-success" role="button">Agregar al carro</a>                            </div>
+
+                                </div>
+                                <div class="col-12 mt-3">
+                                        <a href="/prodtres/tallecolor/<%= prodtres.id %>"class="btn btn-success" role="button">Elija su talle y color</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sidebar -->
+
+                </div>
             </div>
-     
-         </div>
-     </div>
-     
+
+            
+
+                    
+
+        </main>
+        <!-- Main Content -->
+    </div>
 
 
 
 
 
 
-<% include ../partials/_footer %>
 
+
+    <!-- Footer Start-->
+<footer class="footer bg-color" data-bg-color="#f4f8fa">
+        <div class="footer-bottom">
+            <div class="container-fluid">
+                <div class="row border-top ptb--20">
+                    <div class="col-12 text-center">
+                        <p class="copyright-text">DALAN &copy; 2020 made with love ❤</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+    
+    
+    <div class="offcanvas-menu-wrapper" id="offcanvasMenu">
+        <div class="offcanvas-menu-inner">
+            <a href="" class="btn-close">
+                <i class="la la-remove"></i>
+            </a>
+            <nav class="offcanvas-navigation">
+                <ul class="offcanvas-menu">
+                    <li>
+                        <a href="index.html" class="mainmenu__link">
+                            <span class="mm-text">Home</span>
+                        </a>
+    
+                    </li>
+                    <li>
+                        <a href="shop.html" class="mainmenu__link">
+                            <span class="mm-text">Shop</span>
+                        </a>
+    
+                    </li>
+                    <li>
+                        <a href="contactus.html" class="mainmenu__link">
+                            <span class="mm-text">Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html" class="mainmenu__link">
+                            <span class="mm-text">Login</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="mainmenu__link">
+                            <span class="mm-text">Register</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Searchform Popup End -->
+    
+    <!-- Qicuk View Modal Start -->
+    
+    <!-- Qicuk View Modal End -->
+    
+    <!-- Global Overlay Start -->
+    <div class="global-overlay"></div>
+    <!-- Global Overlay End -->
+    
+    <!-- Global Overlay Start -->
+    <a class="scroll-to-top" href=""><i class="la la-angle-double-up"></i></a>
+    <!-- Global Overlay End -->
+    </div>
+    <!-- Main Wrapper End -->
+    
+
+
+
+    <script type="text/javascript" src="/jss/jquery.min.js"></script>
+    <script type="text/javascript" src="/jss/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/jss/script.js"></script>
+</body>
+</html>

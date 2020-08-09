@@ -11,6 +11,9 @@
     <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/assets/img/icon.png">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
     <!-- ************************* CSS Files ************************* -->
 
     <!-- Vendor CSS -->
@@ -104,7 +107,7 @@
                                             <div class="header-toolbar">
                                                 <div class="header-toolbar__item header-toolbar--minicart-dani">
                                                     <a href="/shopcart/" class="header-toolbar__btn toolbar-btndani">
-                                                        <i class="la la-shopping-cart"></i>
+                                                        <i class="fas fa-cart-plus"></i>
                                                         <% if(session.cart) { %>
                                                         <span id="logocartnambah"><%= session.cart.totalQty%></span>
                                                         <% } %>

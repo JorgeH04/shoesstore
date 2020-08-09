@@ -113,7 +113,7 @@
               <div class="row">
                   <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
                       <div class="ft-product-list">
-                          <% produno.forEach(function (produn) { %>
+                          <% produnof.forEach(function (produn) { %>
 
                           <div class="product-inner">
                               <figure class="product-image">
@@ -146,14 +146,18 @@
                                   <p class="product-short-description mb--20">
                                         <%= produn.description %>
                                       <div class="ft-product-action-list d-flex align-items-center">
-                                          <a href="/addtocardproduno/<%= produn.id %>" class="btnn btn-size-md" id="addtocartdan">Agregar al carro</a>
+                                          <a href="/addtocardproduno/<%= produn.id %>" class="btn btn-size-md" id="addtocartdan">Add To Cart</a>
 
                                       </div>
                               </div>
                           </div>
                           <% }) %>
+
                       </div>
+
                   </div>
+
+
       
                       </div>
                   </div>

@@ -39,7 +39,7 @@ router.post('/ofertados/new-ofertados',  async (req, res) => {
     //newNote.user = req.user.id;
     await newNote.save();
     req.flash('success_msg', 'Note Added Successfully');
-    res.redirect('/');
+    res.redirect('/ofertados/add');
   }
 });
 
@@ -112,7 +112,7 @@ router.get('/ofertados/edit/:id',  async (req, res) => {
 router.post('/ofertados/edit/:id',  async (req, res) => {
   const { id } = req.params;
   await Ofertados.updateOne({_id: id}, req.body);
-  res.redirect('/ofertaunobackend/' + id);
+  res.redirect('/ofertados/add');
 });
 
 

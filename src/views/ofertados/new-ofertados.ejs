@@ -7,6 +7,9 @@
       </div>
       <div class="card-body">
         <form action="/ofertados/new-ofertados" method="POST">
+
+
+
           <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="name" autofocus/>
           </div>
@@ -22,12 +25,27 @@
             <div class="form-group">
               <input type="text" name="imagetres" class="form-control" placeholder="imagen 3" autofocus/>
             </div>
-                   <div class="form-group">
+            <div class="form-group">
               <input type="text" name="description" class="form-control" placeholder="descripcion" autofocus/>
             </div>
-                   <div class="form-group">
+            <div class="form-group">
+              <input type="text" name="color" class="form-control" placeholder="color" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="colorstock" class="form-control" placeholder="colorstock" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="talle" class="form-control" placeholder="talle" autofocus/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="tallestock" class="form-control" placeholder="tallestock" autofocus/>
+            </div>
+            <div class="form-group">
               <input type="text" name="price" class="form-control" placeholder="precio" autofocus/>
             </div>
+
+
+
                    
           <div class="form-group">
             <button class="btn btn-primary btn-block" type="submit">
@@ -77,9 +95,15 @@
                                               </span>
                                           
                                       </div>
-                                      <a class="btn btn-danger" href="/ofertados/delete/<%= ofertado.id %>">
-                                        Eliminar
-                                    </a>
+                                     
+                                       <a class="btnn btn-danger" href="/ofertados/delete/<%= ofertado.id %>">
+                                           Eliminar
+                                       </a>
+                                       <br>
+                                        <a class="btnn btn-primary" href="/ofertados/edit/<%= ofertado.id %>">
+                                            Editar
+                                       </a>
+
                                   </div>
                               </div>
                           </div>

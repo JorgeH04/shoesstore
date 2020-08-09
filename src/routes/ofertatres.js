@@ -39,7 +39,7 @@ router.post('/ofertatres/new-ofertatres',  async (req, res) => {
     //newNote.user = req.user.id;
     await newNote.save();
     req.flash('success_msg', 'Note Added Successfully');
-    res.redirect('/');
+    res.redirect('/ofertatres/add');
   }
 });
 
@@ -99,13 +99,13 @@ router.post('/ofertatres/tallecolor/:id',  async (req, res) => {
 //editar
 router.get('/ofertatres/edit/:id',  async (req, res) => {
   const ofertatres = await Ofertatres.findById(req.params.id);
-  res.render('ofertados/edit-ofertados', { ofertados });
+  res.render('ofertatres/edit-ofertatres', { ofertatres });
 });
 
 router.post('/ofertatres/edit/:id',  async (req, res) => {
   const { id } = req.params;
   await Ofertatres.updateOne({_id: id}, req.body);
-  res.redirect('/ofertatresbackend/' + id);
+  res.redirect('/ofertatres/add');
 });
 
 

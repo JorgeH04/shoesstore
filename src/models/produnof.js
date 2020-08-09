@@ -22,4 +22,4 @@ const NoteSchema = new Schema({
 
 });
 
-module.exports = mongoose.model('Produno', NoteSchema);
+module.exports = mongoose.model('Produnof', NoteSchema);

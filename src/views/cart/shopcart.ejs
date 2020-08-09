@@ -50,11 +50,12 @@
                 <!-- end of single column -->
                 <!-- single column -->
                 <div class="col-10 mx-auto col-md-4">
-                  <p> <%= products[i].item.title %> </p>
+                  <p> <%= products[i].item.title %> | <%= products[i].item.color %> | <%= products[i].item.talle%>  </p> 
                 </div>
                 <!-- end of single column -->
                 <!-- single column -->
                 <div class="col-10 mx-auto col-md-2"><p>$<%= products[i].price %></p></div>
+
                 <!-- end of single column -->
                 <!-- single column -->
                 <div class="col-10 mx-auto col-md-2">
@@ -69,7 +70,7 @@
                 <!-- end of single column -->
                 <!-- single column -->
                 <div class="col-10 mx-auto col-md-2">
-                        <a href="/remove/<%= products[i].item._id %>" class="btn btn-danger">Eliminar</a>
+                        <a href="/remove/<%= products[i].item._id %>" class="btn btn-red pull-right btn-sm">Eliminar</a>
 
                 </div>
 

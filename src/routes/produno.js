@@ -16,7 +16,7 @@ const { isAuthenticated } = require('../helpers/auth');
 ///////////////////////////////////////////////////////////////////////7
 
 router.post('/produno/new-produno',  async (req, res) => {
-  const { name, title, image, imagedos, imagetres, description, price } = req.body;
+  const { name, title, image, imagedos, imagetres, description, oldprice, price, filtroprice, filtrobrand, color, colorstock, talle, tallestock } = req.body;
   const errors = [];
   if (!image) {
     errors.push({text: 'Please Write a Title.'});
@@ -35,7 +35,7 @@ router.post('/produno/new-produno',  async (req, res) => {
       price
     });
   } else {
-    const newNote = new Produno({ name, title, image, imagedos, imagetres, description, price });
+    const newNote = new Produno({ name, title, image, imagedos, imagetres, description, oldprice, price, filtroprice, filtrobrand, color, colorstock, talle, tallestock });
     //newNote.user = req.user.id;
     await newNote.save();
     req.flash('success_msg', 'Note Added Successfully');
@@ -46,8 +46,19 @@ router.post('/produno/new-produno',  async (req, res) => {
 
 
 router.get('/produnoredirect/:id', async (req, res) => {
+
+ // if(!req.session.cart){
+ //   return res.render('cart/shopcart', {products:null})
+ // }
+
+ // var cart = new Cart(req.session.cart);
+
   const { id } = req.params;
   const produno = await Produno.findById(id);
+
+
+
+
   res.render('produno/produnoredirect', {produno});
 });
 
@@ -243,7 +254,7 @@ router.get('/produno/edit/:id',  async (req, res) => {
 router.post('/produno/edit/:id',  async (req, res) => {
   const { id } = req.params;
   await Produno.updateOne({_id: id}, req.body);
-  res.redirect('/produno/add');
+  res.redirect('/produnoback/1');
 });
 
 
@@ -253,7 +264,7 @@ router.post('/produno/edit/:id',  async (req, res) => {
 router.get('/produno/delete/:id', async (req, res) => {
   const { id } = req.params;
     await Produno.deleteOne({_id: id});
-  res.redirect('/produno/add');
+  res.redirect('/produnoback/1');
 });
 
 

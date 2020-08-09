@@ -106,54 +106,23 @@
 					{"breakpoint": 768, "settings": {"slidesToShow": 2}},
 					{"breakpoint": 480, "settings": {"slidesToShow": 1}}
 				]'>
-					<div class="item">
-						<div class="ft-product">
-							<div class="product-inner">
-								<div class="product-image">
-									<figure class="product-image--holder">
-										<img src="assets/img/products/men/1.png" alt="Product" width="370"
-											height="410">
-									</figure>
-									<a href="#" class="product-overlay"></a>
-									<div class="product-action">
-										<a data-toggle="modal" data-target="#" class="action-btn">
-											<i class="la la-eye"></i>
-										</a>
-										<a href="#" class="action-btn">
-											<i class="la la-heart-o"></i>
-										</a>
-										<a href="#" class="action-btn">
-											<i class="la la-repeat"></i>
-										</a>
-									</div>
-								</div>
-								<div class="product-info plr--20">
-									<h3 class="product-title"><a href="#">Nova Flow Shoes</a></h3>
-									<div class="product-info-bottom">
-										<div class="product-price-wrapper">
-											<span class="money">Rp. 800.000</span>
-										</div>
+					
 
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
+					<% ofertauno.forEach(function (ofertaun) { %>
 					<div class="item">
 						<div class="ft-product">
 							<div class="product-inner">
 								<div class="product-image">
 									<figure class="product-image--holder">
-										<img src="assets/img/products/women/1.png" alt="Product" width="370"
+										<img src="<%= ofertaun.image %>" alt="Product" width="370"
 											height="410">
 									</figure>
-									<a href="#" class="product-overlay"></a>
+									<a href="/ofertaunoredirect/<%= ofertaun.id %>" class="product-overlay"></a>
 									<div class="product-action">
-										<a data-toggle="modal" data-target="#" class="action-btn">
+										
+										<a href="/ofertaunoredirect/<%= ofertaun.id %>" class="action-btn">
 											<i class="la la-eye"></i>
-										</a>
-										<a href="#" class="action-btn">
-											<i class="la la-heart-o"></i>
 										</a>
 										<a href="#" class="action-btn">
 											<i class="la la-repeat"></i>
@@ -161,11 +130,11 @@
 									</div>
 								</div>
 								<div class="product-info plr--20">
-									<h3 class="product-title"><a href="#">Pharrell Williams Stan Smith.</a>
+									<h3 class="product-title"><a href="#"><%= ofertaun.title %></a>
 									</h3>
 									<div class="product-info-bottom">
 										<div class="product-price-wrapper">
-											<span class="money">Rp. 2.500.000</span>
+											<span class="money">$<%= ofertaun.price %></span>
 										</div>
 
 									</div>
@@ -173,37 +142,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="ft-product">
-							<div class="product-inner">
-								<div class="product-image">
-									<figure class="product-image--holder">
-										<img src="assets/img/products/women/4.png" alt="Product" width="370"
-											height="410">
-									</figure>
-									<a href="#" class="product-overlay"></a>
-									<div class="product-action">
-										<a data-toggle="modal" data-target="#" class="action-btn">
-											<i class="la la-eye"></i>
-										</a>
-										<a href="#" class="action-btn">
-											<i class="la la-heart-o"></i>
-										</a>
-										<a href="#" class="action-btn">
-											<i class="la la-repeat"></i>
-										</a>
-									</div>
-								</div>
-								<div class="product-info plr--20">
-									<h3 class="product-title"><a href="#">Adizero RC 2.0 Shoes.</a></h3>
-									<div class="product-info-bottom">
-										<div class="product-price-wrapper">
-											<span class="money">Rp.1.000.000</span>
-										</div>
+					<% }) %>
 
-									</div>
-								</div>
-							</div>
+
+
 						</div>
 					</div>
 				</div>
@@ -307,6 +249,73 @@
 <!-- Brand Logo Area End -->
 
 
+
+
+ <!-- Top Sale Area Start -->
+ <section class="top-sale-area mb--75 mb-md--55">
+		<div class="container">
+			<div class="row mb--35 mb-md--23">
+				<div class="col-12 text-center">
+					<h2>This Week Top Sales</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="element-carousel" data-slick-options='{
+						"spaceBetween": 30,
+						"slidesToShow": 3
+					}' data-slick-responsive='[
+						{"breakpoint": 768, "settings": {"slidesToShow": 2}},
+						{"breakpoint": 480, "settings": {"slidesToShow": 1}}
+					]'>
+						
+	
+	
+					<% ofertados.forEach(function (ofertado) { %>
+						<div class="item">
+							<div class="ft-product">
+								<div class="product-inner">
+									<div class="product-image">
+										<figure class="product-image--holder">
+											<img src="<%= ofertado.image %>" alt="Product" width="370"
+												height="410">
+										</figure>
+										<a href="/ofertadosredirect/<%= ofertado.id %>" class="product-overlay"></a>
+										<div class="product-action">
+											
+											<a href="/ofertadosredirect/<%= ofertado.id %>" class="action-btn">
+												<i class="la la-eye"></i>
+											</a>
+											<a href="#" class="action-btn">
+												<i class="la la-repeat"></i>
+											</a>
+										</div>
+									</div>
+									<div class="product-info plr--20">
+										<h3 class="product-title"><a href="#"><%= ofertado.title %></a>
+										</h3>
+										<div class="product-info-bottom">
+											<div class="product-price-wrapper">
+												<span class="money">$<%= ofertado.price %></span>
+											</div>
+	
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<% }) %>
+	
+	
+	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Top Sale Area End -->
 
 
 </main>

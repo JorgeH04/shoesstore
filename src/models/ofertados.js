@@ -8,13 +8,17 @@ const NoteSchema = new Schema({
   imagedos: String,
   imagetres: String,
   description: String,
+  color: String,
+  talle:  String,
+  colorstock: String,
+  tallestock: String,
   price: Number,
   amount: Number,
+  filtroprice: Number,
   status: {
     type: Boolean,
     default: false
   }
-
 });
 
 module.exports = mongoose.model('Ofertados', NoteSchema);

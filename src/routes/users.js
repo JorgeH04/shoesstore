@@ -178,7 +178,7 @@ router.post('/users/signin', passport.authenticate('local', {
     res.redirect(oldUrl);
   }else{
     req.flash('success_msg', 'Loggeado exitosamente');
-    res.redirect('/users/profile');
+    res.redirect('/perfil/1');
   }
 });
 

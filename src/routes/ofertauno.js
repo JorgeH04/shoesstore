@@ -40,7 +40,7 @@ router.post('/ofertauno/new-ofertauno',  async (req, res) => {
     //newNote.user = req.user.id;
     await newNote.save();
     req.flash('success_msg', 'Note Added Successfully');
-    res.redirect('/produno/add');
+    res.redirect('/ofertauno/add');
   }
 });
 
@@ -105,17 +105,17 @@ router.get('/ofertauno/edit/:id',  async (req, res) => {
 router.post('/ofertauno/edit/:id',  async (req, res) => {
   const { id } = req.params;
   await Ofertauno.updateOne({_id: id}, req.body);
-  res.redirect('/ofertaunobackend/' + id);
+  res.redirect('/ofertauno/add');
 });
 
 
 
 
 // Delete 
-router.get('/notes/delete/:id', async (req, res) => {
+router.get('/ofertauno/delete/:id', async (req, res) => {
   const { id } = req.params;
     await Ofertauno.deleteOne({_id: id});
-  res.redirect('/ofertaunobackend');
+  res.redirect('/ofertauno/add');
 });
 
 
